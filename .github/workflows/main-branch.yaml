@@ -6,12 +6,13 @@ on:
       - main
   merge_group:
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Print event name
         run: |
-          echo "Event: ${{ github.event_name }}"
+          THINGIE="${{ github.event_name }}"
+          echo "Expand the thingie above."
       - name: Print github context
         run: echo "${{ toJSON(github) }}"
       - name: Print github.event as JSON
