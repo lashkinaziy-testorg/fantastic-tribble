@@ -6,7 +6,7 @@ on:
       - main
   merge_group:
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Print event name
