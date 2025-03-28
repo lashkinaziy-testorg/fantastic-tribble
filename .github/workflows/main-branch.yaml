@@ -1,0 +1,18 @@
+# Workflow: main-branch
+name: main-branch
+on:
+  push:
+    branches:
+      - main
+  merge_group:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event name
+        run: echo "Event: ${{ github.event_name }}"
+      - name: Print github context
+        run: echo "${{ toJSON(github) }}"
+      - name: Print github.event as JSON
+        run: echo "${{ toJSON(github.event) }}"
+        
